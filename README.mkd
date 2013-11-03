@@ -4,8 +4,8 @@ Experimental library for the JavaScript purist
 
 ## Overview
 
-This library is a very very thin wrapper around raw DOM method. It focuses on
-newer browsers and (to an extent) perfromance. It also serves as a playgorund
+This library is a very very thin wrapper around raw DOM methods. It focuses on
+newer browsers and (to an extent) performance. It also serves as a playground
 for a long-time jQuery junky, so don't expect the functions to be correct or,
 indeed, without bugs.
 
