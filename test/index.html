@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <script>
+            var timeit = function (fn, count, start, end) {
+                start = Date.now(); 
+                count = count || 10000; 
+                for (;count--;) { 
+                    fn(); 
+                } 
+                end = Date.now(); 
+                console.log((end - start) / 1000 + 's');
+            };
+        </script>
+    </head>
+    <body>
+        <h1 id="h1">Hello world</h1>
+        <p id="test1" class="test">This is a paragraph with <em>emphasized</em> text.</p>
+        <p id="test2" class="test anchor">This is a paragraph with an <a id="anc" href="#">anchor</a></p>
+        <ul id="ul1">
+            <li class="li" id="liA1">List item A1</li>
+            <li class="li" id="liA2">List item A2</li>
+            <li class="li" id="liA3">List item A3</li>
+            <li class="li" id="liA4">List item A4</li>
+            <li class="li" id="liA5">List item A5</li>
+            <li class="li" id="liA6">List item A6</li>
+        </ul>
+        <ul id="ul2">
+            <li class="li" id="liB1">List item B1</li>
+            <li class="li" id="liB2">List item B2</li>
+            <li class="li" id="liB3">List item B3</li>
+            <li class="li" id="liB4">List item B4</li>
+            <li class="li" id="liB5">List item B5</li>
+            <li class="li" id="liB6">List item B6</li>
+        </ul>
+
+        <script src="../lib/my.js"></script>
+        <script src="test.js"></script>
+        <script src="testmy.js"></script>
+    </body>
+</html>
