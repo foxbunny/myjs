@@ -276,4 +276,22 @@
     m.class('test', 'anchor'); // restore original classes
   });
 
+  test('append element', function() {
+    var ul = my(my().id('ul1'));
+    var originalCount = ul.find('li').length;
+    var newLi = document.createElement('li');
+    newLi.innerHTML = 'added new element';
+    ul.append(newLi);
+    assert.count(ul.find('li'), originalCount + 1);
+  });
+
+  test('prepend element', function() {
+    var ul = my(my().id('ul2'));
+    var originalCount = ul.find('li').length;
+    var newLi = document.createElement('li');
+    newLi.innerHTML = 'added new element';
+    ul.prepend(newLi);
+    assert.count(ul.find('li'), originalCount + 1);
+  });
+
 }(this.my, this.test));
