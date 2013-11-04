@@ -52,7 +52,7 @@
 
   test.fail = function (msg, exception) {
     console.error('FAILED: ' + msg);
-    console.debug(exception);
+    (console.debug || console.log).call(console, '' + exception);
   };
 
   test.pass = function (msg, timing) {
