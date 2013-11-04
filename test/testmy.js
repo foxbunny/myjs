@@ -285,6 +285,18 @@
     assert.count(ul.find('li'), originalCount + 1);
   });
 
+  test('append multiple elements', function() {
+    var ul = my(my().id('ul1'));
+    var originalCount = ul.find('li').length;
+    var nodes = [1, 2, 3].map(function(num) {
+      var newLi = document.createElement('li');
+      newLi.innerHTML = 'added new element ' + num;
+      return newLi;
+    });
+    ul.append(nodes);
+    assert.count(ul.find('li'), originalCount + 3);
+  });
+
   test('prepend element', function() {
     var ul = my(my().id('ul2'));
     var originalCount = ul.find('li').length;
@@ -292,6 +304,18 @@
     newLi.innerHTML = 'added new element';
     ul.prepend(newLi);
     assert.count(ul.find('li'), originalCount + 1);
+  });
+
+  test('prepend multiple elements', function() {
+    var ul = my(my().id('ul2'));
+    var originalCount = ul.find('li').length;
+    var nodes = [1, 2, 3].map(function(num) {
+      var newLi = document.createElement('li');
+      newLi.innerHTML = 'added new element ' + num;
+      return newLi;
+    });
+    ul.prepend(nodes);
+    assert.count(ul.find('li'), originalCount + 3);
   });
 
 }(this.my, this.test));
