@@ -41,7 +41,7 @@
       this.removeEventListener('click', listener);
     };
     my(anchor).on('click', listener);
-    test.note('click the \'anchor\' link');
+    anchor.click();
   });
 
   test('attaching event listener returns origina object', function() {
