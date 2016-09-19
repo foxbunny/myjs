@@ -29,16 +29,17 @@
       timer = setTimeout(function() {
         test.fail(desc, 'timed out');
       }, test.timeout);
+      start = Date.now();
       try {
-        start = Date.now();
         fn();
-        if (timer) { clearTimeout(timer); }
-        end = Date.now();
-        test.pass(desc, end - start);
       } catch(err) {
         if (timer) { clearTimeout(timer); }
         test.fail(desc, err);
+        return;
       }
+      if (timer) { clearTimeout(timer); }
+      end = Date.now();
+      test.pass(desc, end - start);
     } else {
       timer = setTimeout(function() {
         test.fail(desc, 'timed out');
