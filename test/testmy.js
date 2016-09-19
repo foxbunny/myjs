@@ -18,7 +18,7 @@
     assert.count(nodes, 12);
   });
 
-  test('select elemetns by query', function () {
+  test('select elements by query', function () {
     var node = my().get('#ul1 #liA6');
     assert.element(node);
   });
@@ -235,14 +235,21 @@
   });
 
   test('get class names', function() {
-    var m = my(my().id('test2'));
-    assert.array(m.class(), ['test', 'anchor']);
+    var test2 = my().id('test2');
+    assert.array(my(test2).class(), ['test', 'anchor']);
   });
 
   test('set class name', function() {
-    var m = my(my().id('test2'));
-    m.class('foo');
+    var test2 = my().id('test2');
+    var m = my(test2);
+    m.class('foo')
     assert.array(m.class(), ['test', 'anchor', 'foo']);
+  });
+
+  test('returns empty array if there are no classes', function () {
+    var h1 = my().id('h1');
+    var m = my(h1);
+    assert.array(m.class(), []);
   });
 
   test('does not add existing classes', function() {
