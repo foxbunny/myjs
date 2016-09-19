@@ -128,8 +128,8 @@
 
   assert.elements = function (arr, message) {
     assert(
-      arr instanceof window.NodeList,
-      message || '' + arr + ' should be a NodeList'
+      arr instanceof window.NodeList || arr instanceof window.HTMLCollection,
+      message || '' + arr + ' should be a NodeList or HTMLCollection'
     );
   };
 
